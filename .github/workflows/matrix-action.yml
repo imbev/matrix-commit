@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  matrix_action_job:
+    runs-on: ubuntu-latest
+    name: Job to test matrix-action
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: "matrix-action"
+
+    - name: matrix-action
+      uses: ./matrix-action
+      with:
+        homeserver: "https://matrix.org"
+        username: "user"
+        access_token: "syt_a3J...Ntg"
+        room_id: "!Stk...XbP:matrix.org"
+        message: "# Commit Successful!"
