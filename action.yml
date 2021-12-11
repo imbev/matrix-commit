@@ -1,4 +1,4 @@
-name: "matrix-action"
+name: "matrix-commit"
 description: "A Github Action for sending messages to a Matrix Room."
 branding:
   icon: "bell"
@@ -22,7 +22,7 @@ inputs:
 runs:
   using: 'docker'
   image: python:3.9
-  entrypoint: "./matrix-action/src/entrypoint.sh"
+  entrypoint: "./matrix-commit/src/entrypoint.sh"
   env:
     HOMESERVER: ${{ inputs.homeserver }}
     USERNAME: ${{ inputs.username }}

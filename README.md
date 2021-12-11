@@ -1,4 +1,4 @@
-# matrix-action
+# matrix-commit
 A Github Action for sending messages to a Matrix Room.
 
 ## Screenshot:
@@ -6,7 +6,7 @@ A Github Action for sending messages to a Matrix Room.
 
 ## Example Usage:
 ```yaml
-# .github/workflows/matrix-action.yml
+# .github/workflows/matrix-commit.yml
 on:
   push:
     branches:
@@ -18,8 +18,8 @@ jobs:
     name: Send Message to Matrix Room
     steps:
 
-    - name: matrix-action
-      uses: krazykirby99999/matrix-action@v1
+    - name: matrix-commit
+      uses: krazykirby99999/matrix-commit@v1
 
       with:
         homeserver: ${{ secrets.BOT_HOMESERVER }}

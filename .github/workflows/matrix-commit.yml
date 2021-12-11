@@ -3,16 +3,16 @@ on: [push]
 jobs:
   matrix_action_job:
     runs-on: ubuntu-latest
-    name: Job to test matrix-action
+    name: Job to test matrix-commit
     steps:
 
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        path: "matrix-action"
+        path: "matrix-commit"
 
-    - name: matrix-action
-      uses: ./matrix-action
+    - name: matrix-commit
+      uses: ./matrix-commit
       with:
         homeserver: "https://matrix.org"
         username: ${{ secrets.TEST_BOT_USERNAME }}

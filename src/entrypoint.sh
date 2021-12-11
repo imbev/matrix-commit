@@ -1,5 +1,5 @@
 #!/bin/bash
-cd matrix-action
+cd matrix-commit
 
 python -m pip install poetry
 python -m poetry install
