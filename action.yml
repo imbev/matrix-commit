@@ -1,0 +1,33 @@
+name: "matrix-action"
+description: "A Github Action for sending messages to a Matrix Room."
+branding:
+  icon: "bell"
+  color: "gray-dark"
+
+inputs:
+  homeserver:
+    description: "Matrix Homeserver (https://matrix.org)"
+    required: true
+  username:
+    description: "Matrix Username (user)"
+    required: true
+  access_token:
+    description: "Matrix Access Token (syt_a3J...Ntg)"
+    required: true
+  room_id:
+    description: "Matrix Room ID (!Stk...XbP:matrix.org)"
+    required: true
+  message:
+    description: "Message in Markdown format (# Commit Successful!)"
+    required: true
+
+runs:
+  using: 'docker'
+  image: python:3.9
+  entrypoint: "./matrix-action/src/entrypoint.sh"
+  env:
+    HOMESERVER: ${{ inputs.homeserver }}
+    USERNAME: ${{ inputs.username }}
+    ACCESS_TOKEN: ${{ inputs.access_token }}
+    ROOM_ID: ${{ inputs.room_id }}
+    MESSAGE: ${{ inputs.message }}
