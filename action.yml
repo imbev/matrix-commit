@@ -16,7 +16,6 @@ inputs:
     required: true
   room_id:
     description: "Matrix Room ID (!Stk...XbP:matrix.org)"
-    required: true
   message:
     description: "Message in Markdown format (# Commit Successful!)"
     required: true
