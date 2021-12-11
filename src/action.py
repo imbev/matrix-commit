@@ -8,8 +8,14 @@ USERNAME = os.getenv("USERNAME")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 ROOM_ID = os.getenv("ROOM_ID")
 MESSAGE = os.getenv("MESSAGE") or "Commit:"
-
-commit = git.Repo(".").head.commit
+BRANCH = os.getenv("BRANCH")
+ 
+repo = git.Repo('.')
+if BRANCH:
+    repo.git.checkout(BRANCH)
+    commit = repo.commit(BRANCH)
+else:
+    commit = repo.commit('HEAD')
 
 creds = botlib.Creds(homeserver=HOMESERVER, username=USERNAME, access_token=ACCESS_TOKEN)
 bot = botlib.Bot(creds=creds)
@@ -22,6 +28,7 @@ async def send_message(joined_room_id: str) -> None:
     message = f"""
 {MESSAGE}
 Author: {commit.author.name}
+Branch: {repo.active_branch}
 Timestamp: {time.asctime(time.gmtime(commit.committed_date))}
 Message: {commit.message}
 """

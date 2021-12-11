@@ -18,6 +18,8 @@ inputs:
     description: "Matrix Room ID (!Stk...XbP:matrix.org)"
   message:
     description: "Message in Markdown format (# Commit Successful!)"
+  branch:
+    description: "Git Branch Name (master)"
 
 runs:
   using: 'docker'
@@ -29,3 +31,4 @@ runs:
     ACCESS_TOKEN: ${{ inputs.access_token }}
     ROOM_ID: ${{ inputs.room_id }}
     MESSAGE: ${{ inputs.message }}
+    BRANCH: ${{ inputs.branch }}
