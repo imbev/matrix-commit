@@ -15,7 +15,7 @@ jobs:
       uses: ./matrix-action
       with:
         homeserver: "https://matrix.org"
-        username: "user"
-        access_token: "syt_a3J...Ntg"
-        room_id: "!Stk...XbP:matrix.org"
+        username: ${{ secrets.TEST_BOT_USERNAME }}
+        access_token: ${{ secrets.TEST_BOT_ACCESS_TOKEN }}
+        room_id: ${{ secrets.TEST_ROOM_ID }}
         message: "# Commit Successful!"
