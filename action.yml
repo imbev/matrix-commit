@@ -18,7 +18,6 @@ inputs:
     description: "Matrix Room ID (!Stk...XbP:matrix.org)"
   message:
     description: "Message in Markdown format (# Commit Successful!)"
-    required: true
 
 runs:
   using: 'docker'
