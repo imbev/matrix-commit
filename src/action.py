@@ -8,14 +8,9 @@ USERNAME = os.getenv("USERNAME")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 ROOM_ID = os.getenv("ROOM_ID")
 MESSAGE = os.getenv("MESSAGE") or "Commit:"
-BRANCH = os.getenv("BRANCH")
  
 repo = git.Repo('.')
-if BRANCH:
-    repo.git.checkout(BRANCH)
-    commit = repo.commit(BRANCH)
-else:
-    commit = repo.commit('HEAD')
+commit = repo.commit('HEAD')
 
 creds = botlib.Creds(homeserver=HOMESERVER, username=USERNAME, access_token=ACCESS_TOKEN)
 bot = botlib.Bot(creds=creds)
