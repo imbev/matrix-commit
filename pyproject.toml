@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "A Github Action for sending messages to a Matrix Room."
 authors = ["krazykirby99999"]
 license = "MIT"
+packages = [
+    { include = "matrix-commit" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"

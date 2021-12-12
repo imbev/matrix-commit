@@ -21,8 +21,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: python:3.9
-  entrypoint: "./matrix-commit/src/entrypoint.sh"
+  image: 'Dockerfile'
   env:
     HOMESERVER: ${{ inputs.homeserver }}
     USERNAME: ${{ inputs.username }}
