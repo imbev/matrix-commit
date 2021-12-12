@@ -18,6 +18,9 @@ jobs:
     name: Send Message to Matrix Room
     steps:
 
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: matrix-commit
       uses: krazykirby99999/matrix-commit@v1
 
