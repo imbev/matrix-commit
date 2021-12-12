@@ -1,21 +1,25 @@
-on: [push]
+# .github/workflows/matrix-commit.yml
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   matrix_action_job:
     runs-on: ubuntu-latest
-    name: Job to test matrix-commit
+    name: Send Message to Matrix Room
     steps:
 
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        path: "matrix-commit"
 
     - name: matrix-commit
-      uses: ./matrix-commit
+      uses: krazykirby99999/matrix-commit@v1
+
       with:
-        homeserver: "https://matrix.org"
-        username: ${{ secrets.TEST_BOT_USERNAME }}
-        access_token: ${{ secrets.TEST_BOT_ACCESS_TOKEN }}
-        room_id: ${{ secrets.TEST_ROOM_ID }}
-        message: "# Commit Successful!"
+        homeserver: ${{ secrets.BOT_HOMESERVER }}
+        username: ${{ secrets.BOT_USERNAME }}
+        access_token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+        room_id: ${{ secrets.ROOM_ID }}
+        message: "#### New Commit:"
