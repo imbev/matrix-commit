@@ -37,11 +37,11 @@ jobs:
 ## Notes:
 
 ### Syntax:
-- The homeserver should be in the form of "https://domain.tld"
-- The username should be the username, not the user id. ("krazykirby99999", not "@krazykirby99999:matrix.org")
-- The room_id should be the internal room id of the room, not the published address. ("!QQpfJfZvqxbCfeDgCj:matrix.org", not "#thisweekinmatrix:matrix.org") This can be found under Room Options > Advanced > Room Information in the Element Client.
+- The homeserver should be in the form of `https://domain.tld`
+- The username should be the username, not the user id. (`krazykirby99999`, not `@krazykirby99999:matrix.org`)
+- The room_id should be the internal room id of the room, not the published address. (`!QQpfJfZvqxbCfeDgCj:matrix.org`, not `#thisweekinmatrix:matrix.org`) This can be found under Room Options > Advanced > Room Information in the Element Client.
 
 ### Other
 - If the room_id is not specified, the bot will send the message to all joined rooms.
-- If the message is not specified, it will default to "Commit:".
+- If the message is not specified, it will default to `Commit:`.
 - The bot will join all invited rooms upon the start of an action.
