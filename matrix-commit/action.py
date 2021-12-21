@@ -12,6 +12,7 @@ MESSAGE = os.getenv("MESSAGE") or "Commit:"
 repo = git.Repo('.')
 commit = repo.commit('HEAD')
 repository_url = repo.remotes.origin.url.split('.git')[0]
+commit_url = f"{repository_url}/commit/{commit.hexsha}"
 
 creds = botlib.Creds(homeserver=HOMESERVER, username=USERNAME, access_token=ACCESS_TOKEN)
 bot = botlib.Bot(creds=creds)
@@ -23,6 +24,8 @@ async def send_message(joined_room_id: str) -> None:
 
     message = f"""
 {MESSAGE}
+Commit: {commit_url}
+
 Repository: {repository_url}
 Author: {commit.author.name}
 Branch: {repo.active_branch}
