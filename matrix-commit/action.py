@@ -24,8 +24,8 @@ async def send_message(joined_room_id: str) -> None:
 
     message = f"""
 {MESSAGE}
-URL: {commit_url}
 
+URL: {commit_url}
 Repository: {repository_url}
 Author: {commit.author.name}
 Branch: {repo.active_branch}
